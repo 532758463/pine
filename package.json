@@ -1,0 +1,160 @@
+{
+    "name": "RUI",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "React components library",
+    "author": "xiaoyang <532758463@qq.com>",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "license": "MIT",
+    "scripts": {
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+        "lint": "yarn run lint-eslint && yarn run lint-stylelint",
+        "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js {src,scripts}/**/*.{ts,tsx,js}",
+        "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.scss --syntax scss",
+        "storybook": "yarn build-css && start-storybook -p 9009 -s public",
+        "start": "cross-env NODE_ENV=development webpack-dev-server --color --inline --config configs/webpack.dev.js",
+        "build": "cross-env  NODE_ENV=production webpack --color --inline  --config configs/webpack.prod.js",
+        "build-ts": "tsc -p tsconfig.build.json",
+        "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+        "test": "jest --maxWorkers 2",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "build-storybook": "yarn build-css &&  build-storybook -s public"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.26",
+        "@fortawesome/free-solid-svg-icons": "^5.12.0",
+        "@fortawesome/react-fontawesome": "^0.1.8",
+        "axios": "^0.19.1",
+        "classnames": "^2.2.6",
+        "react-transition-group": "^4.3.0"
+    },
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.6",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/plugin-proposal-decorators": "^7.8.3",
+        "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+        "@babel/plugin-transform-react-constant-elements": "^7.9.0",
+        "@babel/plugin-transform-react-inline-elements": "^7.9.0",
+        "@babel/plugin-transform-runtime": "^7.9.6",
+        "@babel/preset-env": "^7.9.6",
+        "@babel/preset-react": "^7.9.4",
+        "@babel/preset-typescript": "^7.9.0",
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@shopify/jest-dom-mocks": "2.9.1",
+        "@storybook/addon-actions": "5.3.19",
+        "@storybook/addon-knobs": "5.3.19",
+        "@storybook/addon-notes": "5.3.19",
+        "@storybook/addon-options": "5.3.19",
+        "@storybook/react": "5.3.19",
+        "@testing-library/jest-dom": "^5.11.1",
+        "@testing-library/react": "10.4.7",
+        "@testing-library/react-hooks": "3.3.0",
+        "@types/classnames": "^2.2.9",
+        "@types/jest": "26.0.7",
+        "@types/react": "16.9.34",
+        "@types/react-dom": "^16.9.7",
+        "@typescript-eslint/eslint-plugin": "3.7.0",
+        "@typescript-eslint/parser": "3.7.0",
+        "babel-core": "6.26.3",
+        "babel-eslint": "10.1.0",
+        "babel-loader": "8.1.0",
+        "babel-plugin-dynamic-import-node": "2.3.3",
+        "babel-preset-react-app": "^9.1.2",
+        "case-sensitive-paths-webpack-plugin": "^2.3.0",
+        "clean-webpack-plugin": "^3.0.0",
+        "conventional-changelog-cli": "^2.0.31",
+        "core-js": "^3.6.5",
+        "cross-env": "^7.0.2",
+        "css-loader": "^3.5.3",
+        "eslint": "7.5.0",
+        "eslint-config-react-app": "5.2.1",
+        "eslint-plugin-flowtype": "5.2.0",
+        "eslint-plugin-import": "2.22.0",
+        "eslint-plugin-jsx-a11y": "6.3.1",
+        "eslint-plugin-react": "7.20.3",
+        "eslint-plugin-react-hooks": "4.0.8",
+        "fork-ts-checker-webpack-plugin": "5.0.9",
+        "happypack": "^5.0.1",
+        "html-webpack-plugin": "^4.3.0",
+        "husky": "^4.2.5",
+        "jest": "26.1.0",
+        "jest-environment-jsdom-fourteen": "1.0.1",
+        "jest-localstorage-mock": "2.4.3",
+        "jest-resolve": "26.1.0",
+        "jest-watch-typeahead": "0.6.0",
+        "less-loader": "^6.0.0",
+        "lint-staged": "^10.2.0",
+        "mini-css-extract-plugin": "^0.9.0",
+        "node-sass": "^4.13.1",
+        "optimize-css-assets-webpack-plugin": "^5.0.3",
+        "postcss-flexbugs-fixes": "^4.2.0",
+        "postcss-loader": "^3.0.0",
+        "postcss-normalize": "^9.0.0",
+        "postcss-preset-env": "^6.7.0",
+        "prettier": "^2.0.5",
+        "react": "^16.13.1",
+        "react-docgen-typescript-loader": "^3.7.2",
+        "react-dom": "^16.13.1",
+        "react-hot-loader": "^4.12.21",
+        "react-test-renderer": "16.13.1",
+        "regenerator-runtime": "^0.13.5",
+        "sass-loader": "^8.0.2",
+        "style-loader": "^1.2.1",
+        "stylelint": "^13.3.3",
+        "stylelint-config-prettier": "^8.0.1",
+        "stylelint-config-rational-order": "^0.1.2",
+        "stylelint-config-standard": "^20.0.0",
+        "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+        "stylelint-order": "^4.0.0",
+        "stylelint-scss": "^3.17.1",
+        "terser-webpack-plugin": "^2.3.5",
+        "ts-jest": "26.1.3",
+        "ts-loader": "7.0.5",
+        "ts-node": "^8.9.1",
+        "typescript": "^3.9.7",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11",
+        "webpack-dev-server": "^3.10.3",
+        "webpack-merge": "^4.2.2",
+        "webpackbar": "^4.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint -c .commitlintrc.js -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js}": [
+            "eslint -c .eslintrc.js"
+        ],
+        "*.{css,less,scss}": [
+            "stylelint --config .stylelintrc.json"
+        ],
+        "*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
+            "prettier --write"
+        ]
+    },
+    "jest": {
+        "preset": "ts-jest",
+        "clearMocks": true,
+        "coverageDirectory": "coverage",
+        "testMatch": [
+            "<rootDir>/src/**/*.test.(ts|tsx)"
+        ],
+        "setupFilesAfterEnv": [
+            "<rootDir>/src/setupTests.ts"
+        ]
+    }
+}
