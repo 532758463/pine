@@ -135,3 +135,5 @@ sketch
 storybook-static
 
 yarn.lock
+es
+lib

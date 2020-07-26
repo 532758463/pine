@@ -1,10 +1,16 @@
 {
     "name": "RUI",
     "version": "1.0.0",
-    "main": "index.js",
     "description": "React components library",
     "author": "xiaoyang <532758463@qq.com>",
     "private": true,
+    "main": "lib/index.js",
+    "module": "es/index.js",
+    "typings": "lib/index.d.ts",
+    "files": [
+        "es",
+        "lib"
+    ],
     "repository": {
         "type": "git",
         "url": ""
@@ -19,6 +25,11 @@
         "start": "cross-env NODE_ENV=development webpack-dev-server --color --inline --config configs/webpack.dev.js",
         "build": "cross-env  NODE_ENV=production webpack --color --inline  --config configs/webpack.prod.js",
         "build-ts": "tsc -p tsconfig.build.json",
+        "type-check": "tsc --noEmit",
+        "build:es": "tsc --project tsconfig.build.json --module esnext --outDir es",
+        "build:lib": "tsc --project tsconfig.build.json --module commonjs --outDir lib",
+        "prebuild": "rimraf es lib",
+        "build-ui": "cross-env NODE_ENV=production && npm run build:es && npm run build:lib && gulp",
         "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
         "test": "jest --maxWorkers 2",
         "test:watch": "jest --watch",
@@ -85,6 +96,7 @@
         "eslint-plugin-react": "7.20.3",
         "eslint-plugin-react-hooks": "4.0.8",
         "fork-ts-checker-webpack-plugin": "5.0.9",
+        "gulp": "^4.0.2",
         "happypack": "^5.0.1",
         "html-webpack-plugin": "^4.3.0",
         "husky": "^4.2.5",
