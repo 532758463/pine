@@ -1,5 +1,5 @@
 {
-    "name": "RUI",
+    "name": "pine",
     "version": "1.0.0",
     "description": "React components library",
     "author": "xiaoyang <532758463@qq.com>",
@@ -139,7 +139,8 @@
         "webpack-cli": "^3.3.11",
         "webpack-dev-server": "^3.10.3",
         "webpack-merge": "^4.2.2",
-        "webpackbar": "^4.0.0"
+        "webpackbar": "^4.0.0",
+        "rc-checkbox": "2.3.1"
     },
     "husky": {
         "hooks": {
