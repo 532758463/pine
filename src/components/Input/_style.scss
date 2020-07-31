@@ -1,0 +1,17 @@
+.#{$prefix-class}-input-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+
+
+}
+
+.#{$prefix-class}-input-group {
+    border: $input-border-width solid $input-border-color;
+
+    .#{$prefix-class}-input-inner {
+        border: none;
+        outline: none;
+    }
+}

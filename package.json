@@ -21,7 +21,7 @@
         "lint": "yarn run lint-eslint && yarn run lint-stylelint",
         "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js {src,scripts}/**/*.{ts,tsx,js}",
         "lint-stylelint": "stylelint --config .stylelintrc.json src/**/*.scss --syntax scss",
-        "storybook": "yarn build-css && start-storybook -p 9009 -s public",
+        "storybook": "yarn build-css && yarn build-storybook && start-storybook -p 9009 -s public",
         "start": "cross-env NODE_ENV=development webpack-dev-server --color --inline --config configs/webpack.dev.js",
         "build": "cross-env  NODE_ENV=production webpack --color --inline  --config configs/webpack.prod.js",
         "build-ts": "tsc -p tsconfig.build.json",

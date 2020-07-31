@@ -1,0 +1,5 @@
+@each $key, $val in $theme-colors {
+    .#{$prefix-class}-icon-#{$key} {
+      color: $val;
+    }
+}
