@@ -263,6 +263,8 @@ $input-border-radius: $border-radius !default;
 $input-border-radius-lg: $border-radius-lg !default;
 $input-border-radius-sm: $border-radius-sm !default;
 
+
+$input-border-hover-color: $blue !default;
 $input-focus-bg: $input-bg !default;
 $input-focus-border-color: lighten($primary, 25%) !default;
 $input-focus-width: 0.2rem !default;

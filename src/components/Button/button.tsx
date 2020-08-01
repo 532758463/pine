@@ -18,13 +18,7 @@ interface BaseButtonProps {
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;
 type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>;
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
-/**
- * 页面中最常用的的按钮元素，适合于完成特定的交互
- * ### 引用方法
- * ~~~js
- * import { Button } from ''
- * ~~~
- */
+
 export const Button: FC<ButtonProps> = (props) => {
     const { btnType, className, disabled, size, children, href, ...restProps } = props;
     // btn, btn-lg, btn-primary
